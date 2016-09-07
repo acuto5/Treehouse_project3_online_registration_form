@@ -1,0 +1,341 @@
+/****************************
+*		Basic styles		*
+****************************/
+
+* {
+	box-sizing: border-box;
+	transition: all 1s;
+}
+
+body {
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	font-family: 'Libre Baskerville', sans-serif;
+	background-color: #ffcc99;
+}
+
+/****************************
+*		Header styles		*
+****************************/
+
+header{
+	font-size: .6em;
+}
+
+header > h1{
+	background-color: black;
+	color: white;
+	margin-top: 0;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+
+header h2{
+	color: grey;
+	font-weight: normal;
+	min-height: 50px;
+}
+
+/****************************
+*		Footer styles		*
+****************************/
+
+footer{
+	color: grey;
+	font-size:.4em;
+	padding: 25px 0 45px;
+}
+
+/********************************************
+*		Main container's width and <hr>		*
+********************************************/
+
+main,
+footer, 
+header > div, 
+header + hr{
+	width: 95%;
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+/****************************
+*		<hr> styles			*
+****************************/
+
+header + hr{
+	border: none;
+	border-top: 5px solid;
+	border-bottom: 2px solid;
+	padding-bottom: 2px;
+	margin-bottom: 15px;
+}
+
+main hr{
+	margin-top: 25px;
+	border-top: 2px solid;
+}
+
+/****************************
+*		Fieldset styles		*
+****************************/
+
+fieldset{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+legend{
+    width: 100%;
+    text-align: left;
+	font-weight: bold;
+	padding-top: 15px;
+	font-size: 1.1em;
+}
+
+fieldset:last-of-type label:first-of-type,
+fieldset:last-of-type label:nth-of-type(5){
+	padding-top: 10px;
+	padding-bottom: 0;
+
+}
+
+/****************************************************
+*		Input, label, select and textarea styles	*
+****************************************************/
+
+label, 
+input:not([type=checkbox]):not([type=radio]), 
+select, 
+textarea{
+	display: block;
+	font-size: .75em;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select,
+textarea{
+	width: 100%;
+	background-color: lightgrey;
+	border: none;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select{
+	height: 50px;
+	line-height: 50px;
+	outline: none;
+}
+
+textarea{
+	height: 100px;
+	outline: none;
+}
+
+label{
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+label input{
+	margin-right: 10px;
+}
+
+input[type=reset]{
+	background-color: tomato !important;
+	color: white;
+	font-weight:bold;
+	margin: 35px 0 15px;
+	font-size: 1.2em !important;
+}
+
+input[type=submit]{
+	background-color: LightSeaGreen !important;
+	color: white;
+	font-weight:bold;
+	font-size: 1.2em !important;
+}
+
+input#zip{
+	width: 50%;
+}
+
+/********************************
+*		Input focus styles		*
+********************************/
+
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+textarea:focus,
+select:focus,
+option,
+input[type=reset]:active,
+input[type=submit]:active{
+	border: 2px solid darkblue;
+	background-color: #cc5200 !important;
+	color: white !important;
+	transition: all 2s;
+}
+
+option{
+	border:	none !important;
+}
+
+input[type=reset]:hover,
+input[type=submit]:hover{
+	color: black;
+	cursor: pointer;
+}
+
+:checked {
+    height: 20px;
+    width: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+input:not(:focus):invalid {
+  background-color: tomato !important;
+}
+
+/********************************
+*		Placeholder styles		*
+********************************/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-size: .9em;
+	text-align: right;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	font-size: .9em;
+	text-align: right;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	font-size: .9em;
+	text-align: right;
+}
+:-moz-placeholder { /* Firefox 18- */
+	font-size: .9em;
+	text-align: right;
+}
+
+/********************************
+*		.clearfix styles		*
+********************************/
+
+.clearfix{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/********************************
+*								*
+*		Media Queries			*
+*								*
+********************************/
+@media screen and (min-width:760px){
+	body{
+		background: linear-gradient(to right, #ffe0cc, #ffb366, #ffe0cc); 
+	}
+	
+	main,
+	footer, 
+	header > div, 
+	header + hr{
+		max-width: 800px;
+	}
+	
+	fieldset:first-of-type label, fieldset:first-of-type input{
+		display: inline-block;
+	}
+	
+	fieldset:first-of-type label,
+	label[for=source],
+	label[for=range]
+	{
+		width: 30%;
+		float: left;
+		height: 50px;
+		line-height: 50px;
+		margin: 0;
+		vertical-align: middle;
+		margin-top: 10px;
+	}
+	
+	fieldset:first-of-type input:not([type=radio]):not([type=checkbox]),
+	select,
+	input[type=range]{
+		width: 70% !important;
+		float: right;
+		margin-top: 10px;
+	}
+	
+	#zip{
+		width: 40% !important;
+		float: left;
+		margin-top: 10px;
+	}
+	
+	input[type=reset],
+	input[type=submit]{
+		width: 49% !important;
+		display: inline-block !important;
+	}
+	
+	input[type=submit]{
+		float: right;
+		margin: 15px 0 0;
+	}
+	
+	input[type=reset]{
+		float: left;
+		margin: 15px 0 0;
+	}
+}
+
+
+@media screen and (min-width:1024px){
+	body{
+		background: linear-gradient(to right, #ffffff, #ffd1b3, #ffd1b3, #ffd1b3, #ffd1b3, #ffb380, #ffd1b3, #ffd1b3, #ffd1b3, #ffd1b3, #ffffff); 
+	}
+	
+	main,
+	footer, 
+	header > div, 
+	header + hr{
+		max-width: 1000px;
+	}
+	
+	fieldset,
+	input[type=reset],
+	input[type=submit]{
+		display: block !important;
+		width: 45% !important;
+	}
+	
+	fieldset:first-of-type {
+		float: left;
+	}
+	
+	fieldset:last-of-type {
+		float: right;
+	}
+	
+	main hr{
+		display: none;
+	}
+	
+	label[for=source]{
+		line-height: 25px;
+	}
+}
+
+
